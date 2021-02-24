@@ -10,9 +10,9 @@ let grade;
 
 if (gpa === 4.0) {
   grade = 'A';
-} else if (gpa >= 3.8) {
+} else if (gpa >= 3) {
   grade = 'B';
-} else if (gpa >= 3.6) {
+} else if (gpa >= 2) {
   grade = 'C'
 } else {
   grade = 'NC';
