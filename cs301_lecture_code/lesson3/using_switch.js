@@ -1,3 +1,5 @@
+"use strict";
+
 const prompt = require("prompt-sync")();
 
 let grade = prompt("Please enter your grade: ");
