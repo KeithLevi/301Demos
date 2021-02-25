@@ -17,6 +17,8 @@ const prompt = require('prompt-sync')();
 let sales = +prompt("Please enter the sales: ");
 let salaried = prompt("is this salaried? yes or no ");
 
+"true"
+
 
 if (salaried === "yes") { // determine the salaried commission
     if (sales < 300) {
