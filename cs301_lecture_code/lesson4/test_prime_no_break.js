@@ -11,4 +11,5 @@ for (let i = 2; i < number; i++) {
   }
 }
 let isPrime = factorCount === 0;
-console.log(isPrime);
+console.log(isPrime, "  factorCount: ", factorCount);
+//try 123456789
