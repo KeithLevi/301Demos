@@ -10,5 +10,5 @@ function sayHi() {
 
 // a function must be called so that it can execute
 sayHi();
-sayHi();
+sayHi();  
 sayHi();

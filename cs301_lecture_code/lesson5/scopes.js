@@ -5,19 +5,19 @@ let x = "global_x"
 
 function outer(outer_param) {
   let y = "outer_local_y";
-  // x,y and outer_param are accessible here i.e x,y and outer_param are in scope here
-  console.log(x, y, outer_param);
+  
+  console.log(x, y, outer_param); // x,y and outer_param are accessible (in scope) 
 
-  // inner_param and z are out of scope
-  // console.log(inner_param, z)  
+  
+  console.log(inner_param, z)   // inner_param and z are out of scope
   function inner(inner_param) {
     let z = "inner_local_z";
-    // x,y,z and outer_param all are accebile here
-    console.log(z, inner_param, y, x);
+    
+    console.log(z, inner_param, y, x); // x,y,z and outer_param all are in scope
   }
   console.log(x, y, outer_param);
-  // inner_param and z are out of scope
-  // console.log(inner_param, z) 
+  
+  console.log(inner_param, z)  // inner_param and z are out of scope
 
   inner("inner_parameter");
 
@@ -27,4 +27,3 @@ function outer(outer_param) {
 outer("outer_parameter");
 
  console.log(y);
-// Why the order or output different?
