@@ -7,6 +7,6 @@ let loopCount = 0;
 while (userInput !== "stop") {
   console.log("Your command was: ", userInput + loopCount);
   loopCount = loopCount + 1;
-  // userInput = prompt("Please enter a command: ");
+  userInput = prompt("Please enter a command: ");
 }
 console.log("exiting...");
