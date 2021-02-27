@@ -3,7 +3,8 @@
 /* eslint-disable */
 /* Write a defining table and then a JavaScript function 
 sReversedPrime, that takes a number as an input and check if the 
-reverse of the input number is prime or not.
+reverse of the input number is prime or not.  (Do it without using
+    string methods)
 
 Hint: Write two helper functions, one for reversing and 
 another for checking prime and use it in the function isReversedPrime.
@@ -39,3 +40,5 @@ function reverse(number) {
    //return reversedNum;
 }
 console.log("expect 4321: ", reverse(1234));
+
+//now need to write isPrime and then isReversedPrime
