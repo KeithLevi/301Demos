@@ -27,10 +27,16 @@ process: Need to get the triangleArea first, need 3 values (a,b,c) for sweep???
 
 function triangleArea(a,b,c){
   let s = (a + b + c) /2;
-  s = (s-a) * (s-b) * (s-c);
+  s = (s-a) * (s-b) * (s-c);  //oops
   const calcArea = Math.sqrt(s);
   return calcArea;
 }
+// function triangleArea(sideA, sideB, sideC){
+//     const s = (sideA + sideB + sideC)/2
+//     const product = s * (s - sideA) * (s - sideB) * (s - sideC);
+//     const result = Math.sqrt(product);
+//     return result;
+// }
 
 function roofVolume(area, depth){
 const volume = area * depth;

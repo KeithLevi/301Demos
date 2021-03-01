@@ -19,8 +19,8 @@ function s(width, sweep) {
     return (width + 2 * sweep) / 2;
 }
 
-function triangleArea(ss, sweep, width) {
-    let triangleArea = Math.sqrt(s(ss - sweep)(ss - sweep)(ss - width));
+function triangleArea(s, sweep, width) {
+    let triangleArea = Math.sqrt(s(s - sweep)(s - sweep)(s - width));
     return triangleArea;
 }
 
