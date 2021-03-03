@@ -10,23 +10,27 @@ houseVolume = livingVolume + roofVolume
 	s = (a+b+c)/2
 */
 
-function houseVolume(width, height, depth, sweep){
-    const lv = livingVolume(width, height, depth);
-    const rv = roofVolume(sweep, width, depth);
+
+function houseVolume(wid, heig, dep, swee){
+    const lv = livingVolume(wid, heig, dep);
+    const rv = roofVolume(swee, wid, dep);
     return  lv + rv;  
 }
+
 
 function livingVolume(width, height, depth){
     return width * height * depth;
 }
 
 function roofVolume(sweep, width, depth){
-    return triangleArea(sweep, sweep, width) * depth;
+    const rv = triangleArea(sweep, sweep, width) * depth;
+    return rv;
 }
 
-function triangleArea(sideA, sideB, sideC){
-    const s = (sideA + sideB + sideC)/2
-    const product = s * (s - sideA) * (s - sideB) * (s - sideC);
+
+function triangleArea(apple, sideB, sideC){
+    const s = (apple + sideB + sideC)/2
+    const product = s * (s - apple) * (s - sideB) * (s - sideC);
     const result = Math.sqrt(product);
     return result;
 }
