@@ -18,3 +18,6 @@ function isPersonEqual(pers1, pers2){
 
 console.log(isPersonEqual(sam1, sam2));
 console.log(isPersonEqual(sam1, john));
+
+
+
