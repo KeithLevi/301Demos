@@ -16,17 +16,20 @@ function houseVolume(width, height, depth, sweep){
     return  lv + rv;  
 }
 
+
 function livingVolume(width, height, depth){
     return width * height * depth;
 }
 
 function roofVolume(sweep, width, depth){
-    return triangleArea(sweep, sweep, width) * depth;
+    const rv = triangleArea(sweep, sweep, width) * depth;
+    return rv;
 }
 
-function triangleArea(sideA, sideB, sideC){
-    const s = (sideA + sideB + sideC)/2
-    const product = s * (s - sideA) * (s - sideB) * (s - sideC);
+
+function triangleArea(apple, sideB, sideC){
+    const s = (apple + sideB + sideC)/2
+    const product = s * (s - apple) * (s - sideB) * (s - sideC);
     const result = Math.sqrt(product);
     return result;  
 }

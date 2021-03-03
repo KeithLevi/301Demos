@@ -38,8 +38,10 @@ function houseVolume(livingVolume, roofVolume) {
     let houseVolume = livingVolume + roofVolume;
     return houseVolume;
 }
-
-console.log(houseVolume(livingVolume(width, height, depth), roofVolume(triangleArea(s(width, sweep), sweep, width), depth)));
+ const lv = livingVolume(width, height, depth);
+ houseVolume(lv, rv);
+ 
+console.log(lv, roofVolume(triangleArea(s(width, sweep), sweep, width), depth)));
 
 
 let s1 = s(width, sweep);
