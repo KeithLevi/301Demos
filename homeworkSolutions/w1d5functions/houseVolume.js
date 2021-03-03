@@ -11,7 +11,7 @@ houseVolume = livingVolume + roofVolume
 */
 
 function houseVolume(width, height, depth, sweep){
-    const lv = livingVolume(width, height, depth);
+    const lv = livingVolume(width, height, depth); //break here
     const rv = roofVolume(sweep, width, depth);
     return  lv + rv;  
 }
@@ -28,7 +28,7 @@ function triangleArea(sideA, sideB, sideC){
     const s = (sideA + sideB + sideC)/2
     const product = s * (s - sideA) * (s - sideB) * (s - sideC);
     const result = Math.sqrt(product);
-    return result;
+    return result;  
 }
 
 console.log("expect 2080", houseVolume(16,10,10,10));
