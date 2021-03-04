@@ -1,6 +1,7 @@
 "use strict";
 
 exports.checkPrime = checkPrime;
+exports.areaOfCircle = areaOfCircle;
 
 /**
  * 
@@ -13,4 +14,8 @@ function checkPrime(num) {
         if (num % i === 0) return false;
     return num > 1;
 
+}
+
+function areaOfCircle(radius){
+    return Math.PI * Math.PI;
 }
