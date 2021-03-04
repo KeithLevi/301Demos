@@ -100,7 +100,7 @@ function volumeOfHouse(w, d, h, s) {
  */
 function greatestCommonFactor(num1, num2) {
   let largest = 0;
-  for (let i = 2; i <= Math.min(num1 / 2, num2 / 2); i++) {
+  for (let i = 2; i <= Math.min(num1, num2); i++) {
     if (num1 % i === 0 && num2 % i === 0) {
       largest = i;
     }
