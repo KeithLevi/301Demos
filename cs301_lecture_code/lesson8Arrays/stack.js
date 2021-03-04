@@ -1,13 +1,18 @@
 "use strict";
 
 /* 
-https://www.geeksforgeeks.org/check-for-balanced-parentheses-in-an-expression/
-    Declare a character stack S.
-    Now traverse the expression string exp. 
-       // If the current character is a starting bracket (‘(‘ or ‘{‘ or ‘[‘) then push it to stack.
-        If the current character is a closing bracket (‘)’ or ‘}’ or ‘]’) then pop from stack and if the popped character is the matching starting bracket then fine else brackets are not balanced.
-    After complete traversal, if there is some starting bracket left in stack then “not balanced”
-*/
+
+
+    get top of stack, "top"
+     - if closing bracket check to see if it matches next on stack "next"
+       -- if next is a matching open bracket then (discard both and ) continue process
+       -- if next is a nonmatching open bracket then unbalanced -- break (or return false)
+       -- if next is another closing bracket then push top onto closeStack, replace next and continue loop
+     - if top is an open bracket (it must match the top of close stack)
+       -- else not balanced
+
+when empty original stack the closeStack must also be empty, else unbalanced
+
 const stack = ["(", "(", ")", ")"];
 
 let balanced = true;
@@ -16,9 +21,14 @@ while (stack.length > 0) {
     if (top1 === ")" || top1 === "}") {
         const top2 = stack.pop();
         if (top1 !== top2) {
-            console.log("unbalanced!!");
-            balanced = false;
-            break;
+            //if does not match then should save it on a second stack -- closeStack
+
+ 
         }
-    }
+    } else 
 }
+
+
+//            console.log("unbalanced!!");
+// balanced = false;
+// break;
