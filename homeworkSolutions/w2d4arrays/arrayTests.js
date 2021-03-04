@@ -67,9 +67,9 @@ describe("rotateNRight", function () {
 });
 
 /* 6.	Write a JavaScript function that takes a string of  numbers as comma separated values, e.g, “32, 105,  -22”,  and stores it into an array, e.g., [32, 105, -22] and do following operations
-a.	Filters out negative values
-b.	Maps the filtered elements to sum of its digits--i.e., 32 becomes 5 and 105 becomes 6
-c.	Reduce to get sum of all the elements and returns this value--i.e, add the 5 and 6 to get 11
+a.    Filters out negative values
+b.    Maps the filtered elements to sum of its digits--i.e., 32 becomes 5 and 105 becomes 6
+c.    Reduce to get sum of all the elements and returns this value--i.e, add the 5 and 6 to get 11
 */
 describe("filter map reduce string", function () {
     it("tests 32, 105,  -22 ", function () {
@@ -77,10 +77,11 @@ describe("filter map reduce string", function () {
     });
 });
 
-/* 7.	Write a function filterRange(arr, a, b) that gets an array arr, looks for elements with values higher or equal to a and lower or equal to b and return a result as an array. */
+/* 7.	Write a function filterRange(arr, a, b) that gets an array arr, looks for elements with values higher or equal to a and 
+lower or equal to b and return a result as an array. */
 describe("filterRange", function () {
-    it("tests [0, 100, 3, 6, -555], 6, 60",  function () {
-        assert.strictDeepEqual(arrays.filterRange([0, 100, 3, 6, -555], 6, 60), [100, 6]);
+    it("tests [0, 100, 3, 6, -555], 6, 160",  function () {
+        assert.strictDeepEqual(arrays.filterRange([0, 100, 3, 6, -555], 6, 160), [100, 6]);
     });
 });
 
