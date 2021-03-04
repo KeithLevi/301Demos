@@ -21,15 +21,14 @@ function findAverage(arr) {
     }
     const average = total/arr.length;
     return average;
-
 }
 
 /*
 Call findAverage function passing array you created in step1 and
 save the return result in a variable, average.
 */
-const average = findAverage(scores);
-console.log("expect: 30 : " , average);
+const average2 = findAverage(scores);
+console.log("expect: 30 : " , average2);
 
 /*
 Print the average, it should be 30 for this example.
