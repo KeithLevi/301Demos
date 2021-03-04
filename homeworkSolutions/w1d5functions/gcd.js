@@ -13,8 +13,11 @@
  * @returns {number}  gcd
  * process: loop from 2 to min(num1/2, num2/2) and test if number divides both, last one will be largest
  */
+const greatestCommonDivisor  = function (num1, num2){
+    let largest = 0;
     const loopLimit = Math.min(num1 / 2, num2 / 2);
     for (let i = 2; i <= loopLimit; i++) {
+
         if (num1 % i === 0 && num2 % i === 0){
             largest = i;
         }
