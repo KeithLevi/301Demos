@@ -1,24 +1,62 @@
 "use strict";
 
 /* 
-https://www.geeksforgeeks.org/check-for-balanced-parentheses-in-an-expression/
-    Declare a character stack S.
-    Now traverse the expression string exp. 
-       // If the current character is a starting bracket (‘(‘ or ‘{‘ or ‘[‘) then push it to stack.
-        If the current character is a closing bracket (‘)’ or ‘}’ or ‘]’) then pop from stack and if the popped character is the matching starting bracket then fine else brackets are not balanced.
-    After complete traversal, if there is some starting bracket left in stack then “not balanced”
+
+
+    get top of stack, "top"
+     - if closing bracket check to see if it matches next on stack "next"
+       -- if next is a matching open bracket then (discard both and ) continue process
+       -- if next is a nonmatching open bracket then unbalanced -- break (or return false)
+       -- if next is another closing bracket then push top onto closeStack, replace next and continue loop
+     - if top is an open bracket (it must match the top of close stack)
+       -- else not balanced
+
+when empty original stack the closeStack must also be empty, else unbalanced
 */
 const stack = ["(", "(", ")", ")"];
 
-let balanced = true;
-while (stack.length > 0) {
-    const top1 = stack.pop();
-    if (top1 === ")" || top1 === "}") {
-        const top2 = stack.pop();
-        if (top1 !== top2) {
-            console.log("unbalanced!!");
-            balanced = false;
-            break;
+/**
+ * 
+ * @param {Array} stack is array of ( or )
+ * @returns {boolean} true if balanced
+ */
+function checkBalance(stack) {
+     let closeStack = [];
+    while (stack.length > 1) {
+        const top = stack.pop();
+        if (top === ")") {
+            //-- if next is a matching open bracket then (discard both and ) continue process
+            if (stack[stack.length-1] === "(") {
+                stack.pop();
+                continue;
+            } else {  //if next is another closing bracket then push top onto closeStack
+                closeStack.push(top);
+            }
+        } else { //top is "(", must match the top of closeStack
+            if (closeStack.length  === 0 || top !== closeStack.pop()) {
+                return false;
+            } //else top of stack and of closeStack match and have both been popped, so continue with loop.  are at end of loop here
         }
     }
+    //now stack is empty or 1 element
+    if (stack.length === 1) { // check to see if it matches closeStack last element, else false}
+    const len = closeStack.length;
+    const closeTop =closeStack.pop();
+    const stackTop = stack.pop();
+        if ( len=== 1 && closeTop === ")" && stackTop === "(") {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    if (stack.length === 0 && closeStack.length === 0) {
+        return true;
+    } else {
+        return false;
+    }
 }
+
+console.log("expect true: " , checkBalance(stack));
+
+
